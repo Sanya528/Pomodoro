@@ -1,0 +1,301 @@
+body {
+    background-image: url(images/background_6.jpg);
+    background-size: cover;      
+    background-repeat: no-repeat; 
+    background-position: center; 
+    height: 100vh;               
+    margin: 0;            
+    font-family: "Iceberg", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.panel {
+    background-color: rgba(245, 222, 179, 0.2);
+    backdrop-filter: blur(1px);
+    border: 1px rgba(245, 222, 179, 0.3) solid;
+    padding: 15px;
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+
+    display: flex;               /* enable flexbox */
+    flex-direction: row;         /* arrange items horizontally */
+    gap: 60px;                   /* space between buttons */
+    justify-content: center;     /* center buttons horizontally */
+    align-items: center;         /* center buttons vertically */
+}
+
+.panel button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.panel button:hover{
+    filter: drop-shadow(0 8px 8px rgba(255, 255, 255, 0.8))
+            drop-shadow(-8px 0 8px rgba(255, 255, 255, 0.8))
+            drop-shadow(8px 0 8px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 -8px 8px rgba(255, 255, 255, 0.8));
+    
+}
+.panel button img{
+    height: 30px;
+}
+
+
+/* Popup background (hidden by default) */
+.popup {
+  display: none; 
+  position: fixed;
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: none ;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: rgba(245, 222, 179, 0.2);
+  backdrop-filter: blur(1px);
+  border: 1px rgba(245, 222, 179, 0.3) solid;
+  padding: 20px 50px;
+  border-radius: 12px;
+  max-width: 50%;
+  position: relative;
+  width:50%;
+  height: 50%;
+  overflow-y: auto; /* keep scrollbar */
+  scrollbar-color: rgba(245, 222, 179, 0.8) transparent; 
+  scroll-behavior: smooth;
+  font-family: "Iceberg", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* For Chrome, Safari, Edge */
+.popup-content::-webkit-scrollbar {
+  width: 8px; /* scrollbar width */
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: transparent; /* remove white bg */
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.bg-div{
+    padding: 5px;
+}
+
+.bg-div img{
+    width: 120px;
+}
+
+.bg-div:hover{
+    background-color: rgba(250, 235, 215, 0.3);
+}
+
+.bgmusic-div{
+  padding: 1px;
+  margin: 3px;
+}
+.bgmusic-div:hover{
+  background-color: rgba(250, 235, 215, 0.3);
+}
+
+.stopMusic{
+  background-color: rgba(250, 235, 215, 0.3);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.stopMusic:hover{
+    background-color: rgba(250, 235, 215, 0.5);
+}
+
+.stopMusic img{
+  padding: 0px;
+  height: 15px;
+  width: 15px;
+}
+
+.pomodoro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pomodoro input{
+  margin-top:20px;
+  background-color: transparent;
+  border: 0cap;
+  text-align: center;
+  font-size: 15px;
+}
+
+.pomodoro p {
+  margin: 10px;
+  font-size: 100px;
+}
+
+.pomodoroMode,
+.pomodoroControl{
+  display: flex;
+  gap: 20px; 
+}
+
+.pomodoroControl button,
+.pomodoroMode button {
+  background-color: rgba(250, 235, 215, 0.3);
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pomodoroControl button img {
+  padding: 0px 10px;
+  height: 15px;
+  width: 15px;
+}
+
+.pomodoroControl button:hover {
+  background-color: rgba(250, 235, 215, 0.5);
+}
+
+.pomodoroControl #pause:hover{
+  background-color: rgba(218, 0, 0, 0.8);
+}
+.pomodoroControl #play:hover{
+  background-color: rgba(15, 183, 0, 0.8);;
+}
+.pomodoroControl #repeat:hover{
+  background-color: rgba(0, 94, 244, 0.8);;
+}
+
+
+.pomodoroMode button {
+  font-size: 20px;
+  padding: 5px 20px;
+}
+
+.pomodoroMode button:hover {
+  background-color: rgba(15, 183, 0, 0.8);
+}
+.input-area{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+::placeholder{
+  color: rgb(63, 63, 63);
+}
+
+#task{
+  flex: 1;
+  background-color: rgba(255, 244, 230, 0.4);
+  border: 1px rgba(245, 222, 179, 0.3) solid;
+  border-radius:15px;
+  padding: 5px 10px;
+  height: 30px;
+  font-size: 0.9rem;
+}
+
+#add-task{
+  background-color: rgba(250, 235, 215, 0.5);
+  border: 1px rgba(245, 222, 179, 0.3) solid;
+  border-radius:15px;
+  padding: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+}
+
+#add-task:hover{
+  transform:scale(1.1);
+  background-color: rgba(245, 222, 179, 0.3) solid;
+}
+
+#task-list li{
+  display: flex;
+  align-items:center;
+  justify-content:start;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  position: relative;
+}
+
+#task-list li:hover{
+  transition:box-shadow 0.2s ease;
+  background-color: rgba(250, 235, 215, 0.3);
+}
+#task-list li .checkbox{
+  min-width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 121, 164, 0.6);
+  border-radius: 50%;
+  cursor: pointer;
+  appearance: none;
+  transition:all 0.2s ease;
+}
+
+#task-list li .checkbox:checked{
+  background-color: rgba(59, 255, 95, 0.6);
+  border: 2px solid rgba(121, 255, 123, 0.6);
+  transform: scale(1.2);
+}
+
+#task-list li.completed span{
+  text-decoration: 2px line-through;
+}
+#task-list li span{
+  flex: 1;
+  margin-left: 10px;
+  word-wrap: break-word;
+}
+
+.task-button{
+  display:flex;
+  gap:10px;
+  margin-right: auto;
+}
+
+.task-button button{
+  background-color: rgba(250, 235, 215, 0.5);
+  border: 1px rgba(250, 235, 215, 0.3) solid;
+  border-radius: 50%;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-button button:hover{
+  transform: scale(1.1);
+}
+
+.task-button .edit-button{
+  background-color: #ffbf00;
+}
+.task-button .delete-button{
+  background-color: #ff194f;
+}
+
